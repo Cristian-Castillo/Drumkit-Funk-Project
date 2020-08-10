@@ -1,0 +1,191 @@
+:root{
+    --midnightBlue:#090446;
+    --goldFusion:#786F52;
+    --yellowOrange:#FEB95F;
+    --imperialRed:#F71735;
+    --roseRed:#C2095A;
+    --ceder:#DB504A;
+    --bitter:#FF6F59;
+    --zomp:#43AA8B;
+    --tart:#B1F8F2;
+    --teaGreen:#BCD39C;
+    --canary:#FFFC99;
+    --Nyan:#EAFDCF;
+    --charleston:#272D2D;
+    --emerald:#A846A0;
+    --ghostWhite:#F6F8FF;
+    --purpleCustom:#A846A0;
+    --customGray:#50514F;
+    --cyan:#7df5f5;
+}
+.App-header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: var(--emerald);
+}
+/* Drumkit header logo */
+.logo-drumkitfont{
+    font-family: 'Permanent Marker', cursive;
+    color:var(--ghostwhite);
+    font-size:70px;
+    position:relative;
+    padding-bottom:25px;
+}
+/* container for drumkit */
+.container-fuild{
+    height:460px;
+    width:300px;
+    background-color:var(--ghostWhite);
+    border:4.5px var(--emerald) solid;
+    border-radius: 20px;
+    box-shadow:0px 6px 23px rgba(45,45,45,.5);
+    margin:auto;
+    margin-bottom:1px;
+    padding:100px 14px 0px 1px;
+}
+/* Column for buttons */
+.col-3{
+    color:var(--charleston);
+    margin:auto;
+    padding:2px;
+    background-color:none;
+}
+/* Row for buttons */
+.row{
+    width:230px;
+    margin:auto;
+}
+/* Regular drum button styles only */
+.buttonStyle{
+    border-radius:3px;
+    background-color:var(--emerald);
+    color:var(--ghostWhite);
+    height:70px;
+    width:70px;
+    outline:none !important;
+    box-shadow: -1px 10px 13px rgba(45,45,45,.5);
+}
+/* Toggle Switch */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--ghostWhite);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--emerald);
+}
+
+input:focus + .slider {
+box-shadow: 0 0 1px var(--emerald);
+}
+
+input:checked + .slider:before {
+-webkit-transform: translateX(26px);
+-ms-transform: translateX(26px);
+transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+border-radius: 34px;
+}
+
+.slider.round:before {
+border-radius: 50%;
+}
+/* End of Toggle */
+
+/* Slider for volume */
+.slidecontainer {
+    width: 100%;
+}
+
+.slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 33px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: #4CAF50;
+    cursor: pointer;
+}
+
+.powerButton{
+    height:30px;
+    margin-top:-95px;
+}
+/* Display of type of audio and beat */
+.displayBeat{
+    background-color:rgb(214, 220, 220);
+    border-radius:15px;
+    padding-bottom:5px;
+    margin:auto;
+    margin-top:55px;
+    margin-left:15px;
+    width:280px;
+    margin-bottom:25px;
+    border:.01px solid var(--purpleCustom);
+    box-shadow: 0px 6px 10px rgba(45,45,45,.3);
+}
+
+.audioStyle{
+    margin:auto;
+    margin-top:-15px;
+    margin-bottom:10px;
+    margin-left:24px;
+}
