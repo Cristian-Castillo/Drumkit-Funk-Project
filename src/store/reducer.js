@@ -1,3 +1,4 @@
+/* Action types & Action Creators */
 const POWER = 'POWER'
 const QTOUCH = 'QTOUCH'
 const WTOUCH = 'WTOUCH'
@@ -9,6 +10,17 @@ const ZTOUCH = 'ZTOUCH'
 const XTOUCH = 'XTOUCH'
 const CTOUCH = 'CTOUCH'
 
+const QLETTER = 'QLETTER'
+const WLETTER = 'WLETTER'
+const ELETTER = 'ELETTER'
+const ALETTER = 'ALETTER'
+const SLETTER = 'SLETTER'
+const DLETTER = 'DLETTER'
+const ZLETTER = 'ZLETTER'
+const XLETTER = 'XLETTER'
+const CLETTER = 'CLETTER'
+
+/* Default State */
 const defaultState = {
     myDisplay:'FOO',
     powerOn:false,
@@ -16,8 +28,8 @@ const defaultState = {
 
 const reducer = (state = defaultState,action) => {
 
+    /* If the power is on then you can play sound */
     if(state.powerOn === true){
-
         switch(action.type){
             case POWER:{
                 return{
@@ -26,40 +38,91 @@ const reducer = (state = defaultState,action) => {
                 }
             }
             case QTOUCH:
-                let audioOne =  new Audio('/crash.mp3')
-                audioOne.play()
+                let audioOneQ =  new Audio('/crash.mp3')
+                audioOneQ.play()
                 return{
                     ...state,
                     myDisplay:QTOUCH
                 }
+            case QLETTER:{
+                if(action.qSound === 'q' || action.qSound === 'Q'){
+                    let audioOneQ =  new Audio('/crash.mp3')
+                    audioOneQ.play()
+                }
+                return{
+                    ...state
+                }
+            }
+            case WLETTER:{
+                if(action.wSound === 'w' || action.wSound === 'W'){
+                    let audioOneW =  new Audio('/kick-bass.mp3')
+                    audioOneW.play()
+                }
+                return{
+                    ...state
+                }
+            }
             case WTOUCH:
-                const audioTwo = new Audio('/snare.mp3')
-                audioTwo.play()
+                let audioOneW =  new Audio('/kick-bass.mp3')
+                audioOneW.play()
                 return{
-                    ...state,
-                    myDisplay:WTOUCH
+                    ...state
                 }
+            case ELETTER:{
+                if(action.eSound === 'e' || action.eSound === 'E'){
+                    let audioOneE =  new Audio('/tom-1.mp3')
+                    audioOneE.play()
+                }
+                return{
+                    ...state
+                }
+            }
             case ETOUCH:
-                const audioThree = new Audio('/tom-1.mp3')
-                audioThree.play()
+                let audioOneE =  new Audio('/tom-1.mp3')
+                audioOneE.play()
                 return{
-                    ...state,
-                    myDisplay:ETOUCH
+                    ...state
                 }
+            case ALETTER:{
+                if(action.aSound === 'a' || action.aSound === 'A'){
+                    let audioOneA =  new Audio('/tom-2.mp3')
+                    audioOneA.play()
+                }
+                return{
+                    ...state
+                }
+            }
             case ATOUCH:
-                const audioFour = new Audio('/tom-2.mp3')
-                audioFour.play()
+                let audioOneA =  new Audio('/tom-2.mp3')
+                audioOneA.play()
                 return{
-                    ...state,
-                    myDisplay:ATOUCH
+                    ...state
                 }
+            case SLETTER:{
+                if(action.sSound === 's' || action.sSound === 'S' ){
+                    let audioOneS =  new Audio('/tom-3.mp3')
+                    audioOneS.play()
+                }
+                return{
+                    ...state
+                }
+            }
             case STOUCH:
-                const audioFive = new Audio('/tom-3.mp3')
-                audioFive.play()
+                let audioOneS = new Audio('/tom-3.mp3')
+                audioOneS.play()
                 return{
                     ...state,
                     myDisplay:STOUCH
                 }
+            case DLETTER:{
+                if(action.dSound === 'd' || action.dSound === 'D'){
+                    let audioOneD =  new Audio('/tom-4.mp3')
+                    audioOneD.play()
+                }
+                return{
+                    ...state
+                }
+            }
             case DTOUCH:
                 const audioSix = new Audio('/tom-4.mp3')
                 audioSix.play()
