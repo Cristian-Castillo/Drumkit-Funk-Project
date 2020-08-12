@@ -35,6 +35,7 @@ const reducer = (state = defaultState,action) => {
                 return{
                     ...state,
                     powerOn:false,
+                    myDisplay:state.myDisplay = 'POWER OFF'
                 }
             }
             case QTOUCH:
@@ -206,3 +207,4 @@ const reducer = (state = defaultState,action) => {
 }
 
 export default reducer;
+
