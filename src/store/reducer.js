@@ -158,7 +158,7 @@ const reducer = (state = defaultState,action) => {
             case XTOUCH:
                 return{
                     ...state,
-                    myDisplay:XTOUCH
+                    myDisplay:state.myDisplay = 'Tom-Bass'
                 }
                 case XLETTER:{
                     if(action.xSound === 'x' || action.xSound === 'X'){
@@ -200,11 +200,10 @@ const reducer = (state = defaultState,action) => {
             } 
             default:
                 return {
-                    ...defaultState
+                    ...state
                 }
         }
     }
 }
 
 export default reducer;
-
