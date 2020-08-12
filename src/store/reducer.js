@@ -30,12 +30,11 @@ const reducer = (state = defaultState,action) => {
 
     /* If the power is on then you can play sound */
     if(state.powerOn === true){
+
         switch(action.type){
             case POWER:{
                 return{
-                    ...state,
-                    powerOn:false,
-                    myDisplay:state.myDisplay = 'POWER OFF'
+                    ...defaultState
                 }
             }
             case QTOUCH:
@@ -141,6 +140,8 @@ const reducer = (state = defaultState,action) => {
                     myDisplay:state.myDisplay = 'Tom-3'
                 }
             case ZTOUCH:
+                const audioSixZ = new Audio('/tom-1.mp3')
+                audioSixZ.play()
                 return{
                     ...state,
                     myDisplay:state.myDisplay = 'Snare'
@@ -156,6 +157,8 @@ const reducer = (state = defaultState,action) => {
                     }
                 }
             case XTOUCH:
+                let audioOneX =  new Audio('/tom-2.mp3')
+                audioOneX.play()
                 return{
                     ...state,
                     myDisplay:state.myDisplay = 'Tom-Bass'
@@ -171,10 +174,11 @@ const reducer = (state = defaultState,action) => {
                     }
                 }
             case CTOUCH:
+                let audioOneC =  new Audio('/tom-3.mp3')
+                audioOneC.play()
                 return{
                     ...state,
-                    myDisplay:CTOUCH,
-                    myDisplay:state.myDisplay = 'Tom-Bass'
+                    myDisplay:state.myDisplay = 'Bass-1',
                 }
                 case CLETTER:{
                     if(action.cSound === 'c' || action.cSound === 'C'){
@@ -187,20 +191,22 @@ const reducer = (state = defaultState,action) => {
                     }
                 }
             default:
-                return state
+                return{...state}
         }
-    }else{
+    }
+    else{
         switch(action.type){
             case POWER:{
                 return{
                     ...state,
                     powerOn:true,
-                    myDisplay:state.myDisplay = 'Begin DJ'
+                    myDisplay:state.myDisplay = 'Begin DJ',
+                    flag:state.flag = true
                 }
             } 
             default:
                 return {
-                    ...state
+                    ...state,
                 }
         }
     }
