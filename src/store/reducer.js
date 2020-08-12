@@ -22,7 +22,7 @@ const CLETTER = 'CLETTER'
 
 /* Default State */
 const defaultState = {
-    myDisplay:'FOO',
+    myDisplay:'POWER OFF',
     powerOn:false,
 }
 
@@ -34,7 +34,7 @@ const reducer = (state = defaultState,action) => {
             case POWER:{
                 return{
                     ...state,
-                    powerOn:false
+                    powerOn:false,
                 }
             }
             case QTOUCH:
@@ -42,7 +42,7 @@ const reducer = (state = defaultState,action) => {
                 audioOneQ.play()
                 return{
                     ...state,
-                    myDisplay:QTOUCH
+                    myDisplay:state.myDisplay = 'Crash'
                 }
             case QLETTER:{
                 if(action.qSound === 'q' || action.qSound === 'Q'){
@@ -50,7 +50,8 @@ const reducer = (state = defaultState,action) => {
                     audioOneQ.play()
                 }
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Crash'
                 }
             }
             case WLETTER:{
@@ -59,14 +60,16 @@ const reducer = (state = defaultState,action) => {
                     audioOneW.play()
                 }
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Kick-Bass'
                 }
             }
             case WTOUCH:
                 let audioOneW =  new Audio('/kick-bass.mp3')
                 audioOneW.play()
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Kick-Bass'
                 }
             case ELETTER:{
                 if(action.eSound === 'e' || action.eSound === 'E'){
@@ -74,14 +77,16 @@ const reducer = (state = defaultState,action) => {
                     audioOneE.play()
                 }
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Snare'
                 }
             }
             case ETOUCH:
                 let audioOneE =  new Audio('/tom-1.mp3')
                 audioOneE.play()
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Snare'
                 }
             case ALETTER:{
                 if(action.aSound === 'a' || action.aSound === 'A'){
@@ -89,14 +94,16 @@ const reducer = (state = defaultState,action) => {
                     audioOneA.play()
                 }
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Tom-1'
                 }
             }
             case ATOUCH:
                 let audioOneA =  new Audio('/tom-2.mp3')
                 audioOneA.play()
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Tom-1'
                 }
             case SLETTER:{
                 if(action.sSound === 's' || action.sSound === 'S' ){
@@ -104,7 +111,8 @@ const reducer = (state = defaultState,action) => {
                     audioOneS.play()
                 }
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Tom-2'
                 }
             }
             case STOUCH:
@@ -112,7 +120,7 @@ const reducer = (state = defaultState,action) => {
                 audioOneS.play()
                 return{
                     ...state,
-                    myDisplay:STOUCH
+                    myDisplay:state.myDisplay = 'Tom-2'
                 }
             case DLETTER:{
                 if(action.dSound === 'd' || action.dSound === 'D'){
@@ -120,7 +128,8 @@ const reducer = (state = defaultState,action) => {
                     audioOneD.play()
                 }
                 return{
-                    ...state
+                    ...state,
+                    myDisplay:state.myDisplay = 'Tom-3'
                 }
             }
             case DTOUCH:
@@ -128,12 +137,12 @@ const reducer = (state = defaultState,action) => {
                 audioSix.play()
                 return{
                     ...state,
-                    myDisplay:DTOUCH
+                    myDisplay:state.myDisplay = 'Tom-3'
                 }
             case ZTOUCH:
                 return{
                     ...state,
-                    myDisplay:ZTOUCH
+                    myDisplay:state.myDisplay = 'Snare'
                 }
                 case ZLETTER:{
                     if(action.zSound === 'z' || action.zSound === 'Z'){
@@ -141,7 +150,8 @@ const reducer = (state = defaultState,action) => {
                         audioOneZ.play()
                     }
                     return{
-                        ...state
+                        ...state,
+                        myDisplay:state.myDisplay = 'Snare'
                     }
                 }
             case XTOUCH:
@@ -155,13 +165,15 @@ const reducer = (state = defaultState,action) => {
                         audioOneX.play()
                     }
                     return{
-                        ...state
+                        ...state,
+                        myDisplay:state.myDisplay = 'Tom-Bass'
                     }
                 }
             case CTOUCH:
                 return{
                     ...state,
-                    myDisplay:CTOUCH
+                    myDisplay:CTOUCH,
+                    myDisplay:state.myDisplay = 'Tom-Bass'
                 }
                 case CLETTER:{
                     if(action.cSound === 'c' || action.cSound === 'C'){
@@ -169,7 +181,8 @@ const reducer = (state = defaultState,action) => {
                         audioOneC.play()
                     }
                     return{
-                        ...state
+                        ...state,
+                        myDisplay:state.myDisplay = 'Bass-1'
                     }
                 }
             default:
@@ -180,11 +193,14 @@ const reducer = (state = defaultState,action) => {
             case POWER:{
                 return{
                     ...state,
-                    powerOn:true
+                    powerOn:true,
+                    myDisplay:state.myDisplay = 'Begin DJ'
                 }
             } 
             default:
-                return state
+                return {
+                    ...defaultState
+                }
         }
     }
 }

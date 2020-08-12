@@ -28,7 +28,6 @@ class Drumkit extends React.Component{
 
         for(let i = 0; i < document.getElementsByTagName('button').length;i++){
             
-
             if(newBackground[i] === newBackground[0]){
                 newBackground[i].addEventListener('click',foo)
             }
@@ -88,7 +87,7 @@ class Drumkit extends React.Component{
         const cButtonLetter = this.props.cButtonLetter;
 
         /* Display to screen*/
-        const seeDisplay = this.props.myDisplay;
+        const seeDisplay = this.props.display
 
         const revert = () => {
             test.style.backgroundColor = '#a846a0'
@@ -118,8 +117,8 @@ class Drumkit extends React.Component{
                         </div>
                     </div>
                     {/* Display Panel of type of sound */}
-                    <div className='row'>
-                        <h3 className = 'displayBeat'>Display</h3>
+                    <div className='row'> {/*this.state.userAge === ''? buttonOne: this.state.userAge >= 18? buttonTwo: buttonThree */}
+                        <h3 className = 'displayBeat'>{seeDisplay}</h3>
                     </div>
                     {/* Audio Bar */}
                     <div className ='row'>
