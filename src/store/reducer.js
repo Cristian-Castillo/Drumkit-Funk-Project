@@ -135,15 +135,42 @@ const reducer = (state = defaultState,action) => {
                     ...state,
                     myDisplay:ZTOUCH
                 }
+                case ZLETTER:{
+                    if(action.zSound === 'z' || action.zSound === 'Z'){
+                        let audioOneZ =  new Audio('/tom-1.mp3')
+                        audioOneZ.play()
+                    }
+                    return{
+                        ...state
+                    }
+                }
             case XTOUCH:
                 return{
                     ...state,
                     myDisplay:XTOUCH
                 }
+                case XLETTER:{
+                    if(action.xSound === 'x' || action.xSound === 'X'){
+                        let audioOneX =  new Audio('/tom-2.mp3')
+                        audioOneX.play()
+                    }
+                    return{
+                        ...state
+                    }
+                }
             case CTOUCH:
                 return{
                     ...state,
                     myDisplay:CTOUCH
+                }
+                case CLETTER:{
+                    if(action.cSound === 'c' || action.cSound === 'C'){
+                        let audioOneC =  new Audio('/tom-3.mp3')
+                        audioOneC.play()
+                    }
+                    return{
+                        ...state
+                    }
                 }
             default:
                 return state

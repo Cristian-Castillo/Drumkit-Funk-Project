@@ -19,7 +19,7 @@ class Drumkit extends React.Component{
     }
 
     revertBackgroundColorHandler = () => {
-    
+        
         let newBackground = []
 
         for(let i = 0; i < document.getElementsByTagName('button').length;i++){
@@ -28,6 +28,7 @@ class Drumkit extends React.Component{
 
         for(let i = 0; i < document.getElementsByTagName('button').length;i++){
             
+
             if(newBackground[i] === newBackground[0]){
                 newBackground[i].addEventListener('click',foo)
             }
@@ -84,10 +85,14 @@ class Drumkit extends React.Component{
         const dButtonLetter = this.props.dButtonLetter;
         const zButtonLetter = this.props.zButtonLetter;
         const xButtonLetter = this.props.xButtonLetter;
-        const cButtonLetter = this.props.aButtonLetter;
+        const cButtonLetter = this.props.cButtonLetter;
 
         /* Display to screen*/
         const seeDisplay = this.props.myDisplay;
+
+        const revert = () => {
+            test.style.backgroundColor = '#a846a0'
+        }
 
         return(
             <div>
