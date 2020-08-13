@@ -30,7 +30,7 @@ const defaultState = {
     bank:false
 }
 
-const reducer = (state = defaultState,action) => {
+const reducer = (state = defaultState, action) => {
 
     /* If the power is on then you can play sound */
     if(state.powerOn === true){
@@ -217,19 +217,19 @@ const reducer = (state = defaultState,action) => {
                     }
                 }
                 case SWITCHMUSIC:{
-
                     if(state.powerOn === true){
                         if(state.bank === false){
                             return{
                                 ...state,
                                 bank:state.bank = !false,
-                                myDisplay:state.myDisplay = '- BANK REMIX -'
+                                myDisplay:state.myDisplay = 'BANK REMIX'
                             }
                         }
                     }
                     else{
                         return{...defaultState}
                     }
+                    break;
                 }
                 case QTOUCH:
                     let audioOneQ =  new Audio('/crash.mp3')

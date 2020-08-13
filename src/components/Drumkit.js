@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {connect} from 'react-redux'
 import DrumkitStyle from './DrumkitStyle.css'
-import Audio from './Audio';
 
 class Drumkit extends React.Component{
 
@@ -99,14 +98,14 @@ class Drumkit extends React.Component{
                 <div className = 'container-fuild'>
                     <div className ='row powerButton'>
                         <div className ='col-3'>
-                        <h6>BANK</h6>
+                        <h6 className = 'powerStyle'>BANK</h6>
                         <label className = 'switch'>
                             <input onClick = {this.props.bankMusic} type = 'checkbox' />
                             <span className ='slider round' />
                         </label>
                         </div>
                         <div className = 'col-3'>
-                            <h6>POWER</h6>
+                            <h6 className = 'powerStyle'>POWER</h6>
                             <label className = 'switch'>
                                 <input onClick = {this.props.powerButton} type = 'checkbox'/>
                                 <span className ='slider round' />
@@ -116,10 +115,6 @@ class Drumkit extends React.Component{
                     {/* Display Panel of type of sound */}
                     <div className='row'>
                         <h3 className = 'displayBeat'>{seeDisplay}</h3>
-                    </div>
-                    {/* Audio Bar */}
-                    <div className ='row'>
-                        <h3 className='audioStyle'><Audio /></h3>
                     </div>
                     {/* Buttons */}
                     <div className = 'row'>
@@ -233,6 +228,12 @@ class Drumkit extends React.Component{
                         </div>
                     </div>
                 </div>
+                    <div className = 'container-fluid'>
+                        <div className ='authorLayout'>
+                        <h5 className>Design and Coded By</h5>
+                        <h5>Cristian C. Castillo</h5>
+                        </div>
+                    </div>
             </div>
         )
     }
