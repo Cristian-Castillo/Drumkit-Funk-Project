@@ -222,16 +222,13 @@ const reducer = (state = defaultState,action) => {
                         if(state.bank === false){
                             return{
                                 ...state,
-                                bank:state.bank = !false
+                                bank:state.bank = !false,
+                                myDisplay:state.myDisplay = '- BANK REMIX -'
                             }
                         }
                     }
                     else{
-                        return{...state,
-                            powerOn:state.powerOn = false,
-                            myDisplay:state.myDisplay = 'RESET DEVICE',
-                            bank:state.bank = false
-                        }
+                        return{...defaultState}
                     }
                 }
                 case QTOUCH:
