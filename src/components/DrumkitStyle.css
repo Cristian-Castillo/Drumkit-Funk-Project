@@ -194,14 +194,14 @@ border-radius: 50%;
 
 @media(max-width:310px){
     .container-fuild{
-        height:450px;
-        width:290px;
+        height:455px;
+        width:295px;
         background-color:var(--ghostWhite);
         border:4.5px var(--emerald) solid;
         border-radius: 20px;
         box-shadow:0px 6px 23px rgba(45,45,45,.5);
         margin:auto;
-        margin-bottom:20px;
+        margin-bottom:10px;
         padding:100px 14px 0px 1px;
     }
 }

@@ -37,9 +37,13 @@ const reducer = (state = defaultState,action) => {
 
             if(state.powerOn === true && state.bank === true){
 
-                console.log(state.bank + ' -----')
-
                 switch(action.type){
+
+                case POWER:{
+                    return{
+                        ...defaultState,
+                    }
+                }
                 case QTOUCH:
                     let audioOneQ =  new Audio('https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3')
                     audioOneQ.play()
@@ -209,20 +213,24 @@ const reducer = (state = defaultState,action) => {
                         ...state,
                         myDisplay:state.myDisplay = 'POWER OFF',
                         powerOn:state.powerOn = false,
+                        bank:state.bank = false
                     }
                 }
                 case SWITCHMUSIC:{
 
-                    if(state.bank !== false){
-                        return{
-                            ...state,
-                            bank:state.bank = false
+                    if(state.powerOn === true){
+                        if(state.bank === false){
+                            return{
+                                ...state,
+                                bank:state.bank = !false
+                            }
                         }
                     }
                     else{
-                        return{
-                            ...state,
-                            bank:state.bank = true
+                        return{...state,
+                            powerOn:state.powerOn = false,
+                            myDisplay:state.myDisplay = 'RESET DEVICE',
+                            bank:state.bank = false
                         }
                     }
                 }
@@ -394,7 +402,7 @@ const reducer = (state = defaultState,action) => {
                 } 
                 default:
                     return {
-                        ...state
+                        ...defaultState
                     }
             }
         }
