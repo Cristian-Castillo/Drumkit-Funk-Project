@@ -201,7 +201,7 @@ border-radius: 50%;
 @media(max-width:310px){
     .container-fuild{
         height:450px;
-        width:300px;
+        width:270px;
         background-color:var(--ghostWhite);
         border:4.5px var(--emerald) solid;
         border-radius: 20px;
