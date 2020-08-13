@@ -45,7 +45,7 @@
 /* container for drumkit */
 .container-fuild{
     height:450px;
-    width:350px;
+    width:370px;
     background-color:var(--ghostWhite);
     border:4.5px var(--emerald) solid;
     border-radius: 20px;

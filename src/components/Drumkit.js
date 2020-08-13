@@ -24,40 +24,44 @@ class Drumkit extends React.Component{
         for(let i = 0; i < document.getElementsByTagName('button').length;i++){
             newBackground[i] = document.getElementsByTagName('button')[i];
         }
+        /* if display is not POWER OFF, then power must be on 
+        enable click on features to change button background color*/
+        if(this.props.display !== 'POWER OFF'){
 
         for(let i = 0; i < document.getElementsByTagName('button').length;i++){
             
-            if(newBackground[i] === newBackground[0]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            else if(newBackground[i] === newBackground[1]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            else if(newBackground[i] === newBackground[2]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            else if(newBackground[i] === newBackground[3]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            else if(newBackground[i] === newBackground[4]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            else if(newBackground[i] === newBackground[5]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            else if(newBackground[i] === newBackground[6]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            else if(newBackground[i] === newBackground[7]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            else if(newBackground[i] === newBackground[8]){
-                newBackground[i].addEventListener('click',foo)
-            }
-            /* Foo changes button back to normal color upon leaving click */
-            function foo(){
-                newBackground[i].style.backgroundColor = '#ef72e4'
-                newBackground[i].removeEventListener('click',foo)
+                if(newBackground[i] === newBackground[0]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                else if(newBackground[i] === newBackground[1]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                else if(newBackground[i] === newBackground[2]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                else if(newBackground[i] === newBackground[3]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                else if(newBackground[i] === newBackground[4]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                else if(newBackground[i] === newBackground[5]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                else if(newBackground[i] === newBackground[6]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                else if(newBackground[i] === newBackground[7]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                else if(newBackground[i] === newBackground[8]){
+                    newBackground[i].addEventListener('click',foo)
+                }
+                /* Foo changes button back to normal color upon leaving click */
+                function foo(){
+                    newBackground[i].style.backgroundColor = '#ef72e4'
+                    newBackground[i].removeEventListener('click',foo)
+                }
             }
         }
     }
@@ -98,7 +102,7 @@ class Drumkit extends React.Component{
                 <div className = 'container-fuild'>
                     <div className ='row powerButton'>
                         <div className ='col-3'>
-                        <h6 className = 'powerStyle'>BANK</h6>
+                        <h6 className ='powerStyle'>BANK</h6>
                         <label className = 'switch'>
                             <input onClick = {this.props.bankMusic} type = 'checkbox' />
                             <span className ='slider round' />
@@ -228,12 +232,12 @@ class Drumkit extends React.Component{
                         </div>
                     </div>
                 </div>
-                    <div className = 'container-fluid'>
-                        <div className ='authorLayout'>
-                        <h5 className>Design and Coded By</h5>
-                        <h5>Cristian C. Castillo</h5>
-                        </div>
+                <div className = 'container-fluid'>
+                    <div className ='authorLayout'>
+                    <h5>Design and Coded By</h5>
+                    <h5>Cristian C. Castillo</h5>
                     </div>
+                </div>
             </div>
         )
     }

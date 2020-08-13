@@ -203,7 +203,7 @@ const reducer = (state = defaultState, action) => {
                             bank:state.bank = false
                         }
                 }
-                /* End of bank sound */
+            /* End of bank sound */
             }
             /* drum and chords */
             switch(action.type){
