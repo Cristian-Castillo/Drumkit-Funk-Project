@@ -173,7 +173,8 @@ border-radius: 50%;
 .displayBeat{
     background-color:rgb(214, 220, 220);
     border-radius:15px;
-    padding-bottom:5px;
+    padding-bottom:4px;
+    padding-top:4px;
     margin:auto;
     margin-top:55px;
     margin-left:15px;
@@ -188,4 +189,19 @@ border-radius: 50%;
     margin-top:-15px;
     margin-bottom:10px;
     margin-left:24px;
+}
+
+
+@media(max-width:310px){
+    .container-fuild{
+        height:450px;
+        width:290px;
+        background-color:var(--ghostWhite);
+        border:4.5px var(--emerald) solid;
+        border-radius: 20px;
+        box-shadow:0px 6px 23px rgba(45,45,45,.5);
+        margin:auto;
+        margin-bottom:20px;
+        padding:100px 14px 0px 1px;
+    }
 }

@@ -58,6 +58,7 @@ class Drumkit extends React.Component{
             /* Foo changes button back to normal color upon leaving click */
             function foo(){
                 newBackground[i].style.backgroundColor = '#ef72e4'
+                newBackground[i].removeEventListener('click',foo)
             }
         }
     }
@@ -89,10 +90,6 @@ class Drumkit extends React.Component{
         /* Display to screen*/
         const seeDisplay = this.props.display
 
-        const revert = () => {
-            test.style.backgroundColor = '#a846a0'
-        }
-
         return(
             <div>
                 <div className = 'container-fluid'>
@@ -104,7 +101,7 @@ class Drumkit extends React.Component{
                         <div className ='col-3'>
                         <h6>BANK</h6>
                         <label className = 'switch'>
-                            <input type = 'checkbox' />
+                            <input onClick = {this.props.bankMusic} type = 'checkbox' />
                             <span className ='slider round' />
                         </label>
                         </div>
@@ -117,7 +114,7 @@ class Drumkit extends React.Component{
                         </div>
                     </div>
                     {/* Display Panel of type of sound */}
-                    <div className='row'> {/*this.state.userAge === ''? buttonOne: this.state.userAge >= 18? buttonTwo: buttonThree */}
+                    <div className='row'>
                         <h3 className = 'displayBeat'>{seeDisplay}</h3>
                     </div>
                     {/* Audio Bar */}
@@ -245,6 +242,7 @@ const mapStateToProps = (state) => {
     return{
         display:state.myDisplay,
         powerButton:state.powerOn,
+        myFlag:state.flag
     }
 }
 
@@ -269,6 +267,7 @@ const mapDispatchToProps = (dispatch) => {
         cButton:() => dispatch({type:'CTOUCH'}),
         cButtonLetter:(letter) => dispatch({type:'CLETTER',cSound:letter}),
         powerButton:() => dispatch({type:'POWER'}),
+        bankMusic:() => dispatch({type:'SWITCHMUSIC'}),
     }
 }
 
