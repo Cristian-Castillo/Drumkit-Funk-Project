@@ -211,10 +211,10 @@ border-radius: 50%;
         padding:100px 14px 0px 1px;
     }
     .logo-drumkitfont{
-    font-family: 'Permanent Marker', cursive;
-    color:var(--ghostwhite);
-    font-size:60px;
-    position:relative;
-    padding-bottom:30px;
-}
+        font-family: 'Permanent Marker', cursive;
+        color:var(--ghostwhite);
+        font-size:45px;
+        position:relative;
+        padding-bottom:30px;
+    }
 }
